@@ -102,6 +102,13 @@ angular.module('zmApp', [
 
 })
 
+//http://stackoverflow.com/a/24519069/1361529
+.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}])
+
 
 // for events view
 .filter ('eventListFilter', function(NVRDataModel)
@@ -623,6 +630,7 @@ angular.module('zmApp', [
 .factory('timeoutHttpIntercept', ['$rootScope', '$q', 'zm', '$injector', function($rootScope, $q, zm, $injector)
 {
     $rootScope.zmCookie = "";
+    //console.log ("HHHHHHHHHHHHHH**************************");
 
     return {
 
@@ -1041,6 +1049,17 @@ angular.module('zmApp', [
                         var ld = NVRDataModel.getLogin();
                         NVRDataModel.log("zmAutologin called");
 
+
+                        // This is a good time to check if auth is used :-p
+                        if (!ld.isUseAuth)
+                        {
+                            NVRDataModel.log ("Auth is disabled!");
+                            d.resolve("Login Success");
+
+                            $rootScope.$emit('auth-success', 'no auth');
+
+                        }
+
                         if (str)
                         {
                             $ionicLoading.show(
@@ -1089,7 +1108,7 @@ angular.module('zmApp', [
                         $http(
                             {
                                 method: 'POST',
-                                timeout:5000,
+                                timeout:15000,
                                 //withCredentials: true,
                                 url: loginData.url + '/index.php',
                                 headers:
@@ -1484,6 +1503,8 @@ angular.module('zmApp', [
 
         $ionicPlatform.ready(function()
         {
+
+            
            
            // handles URL launches
            // if you just launch zmninja:// then it will honor the settings in "tap screen" -> events or montage
@@ -1514,6 +1535,8 @@ angular.module('zmApp', [
 
             $rootScope.platformOS = "desktop";
             NVRDataModel.log("Device is ready");
+
+
             // var ld = NVRDataModel.getLogin();
             if ($ionicPlatform.is('ios'))
                 $rootScope.platformOS = "ios";
@@ -1691,8 +1714,7 @@ angular.module('zmApp', [
                 {
                     $cordovaSplashscreen.hide();
 
-                    NVRDataModel.log("Enabling insecure SSL");
-                    cordova.plugins.certificates.trustUnsecureCerts(true);
+                    
 
                     cordova.getAppVersion.getVersionNumber().then(function(version)
                     {
@@ -1816,15 +1838,23 @@ angular.module('zmApp', [
                 {
                     NVRDataModel.log("Language file loaded, continuing with rest");
                     NVRDataModel.init();
+                    
+                    // now do SSL check
+                    //setSSLCerts();
+
                     EventServer.init();
                     zmCheckUpdates.start();
                     NVRDataModel.log("Setting up POST LOGIN timer");
                     zmAutoLogin.start();
                     setupPauseAndResume();
+
+
+
                 }
 
             }
 
+            
             function setupPauseAndResume()
             {
                 NVRDataModel.log("Setting up pause and resume handler AFTER language is loaded...");
@@ -2188,7 +2218,7 @@ angular.module('zmApp', [
     {
         data:
         {
-            requireLogin: true
+            requireLogin: false
         },
         url: "/devoptions",
         cache: false,

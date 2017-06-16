@@ -1,5 +1,81 @@
 # Change Log
 
+## [v1.2.38](https://github.com/pliablepixels/zmNinja/tree/v1.2.38) (2017-02-17)
+[Full Changelog](https://github.com/pliablepixels/zmNinja/compare/v1.2.37...v1.2.38)
+
+**Implemented enhancements:**
+
+- SSL - add an option that either requires self signed certs installed on phones or will only work with real certs [\#455](https://github.com/pliablepixels/zmNinja/issues/455)
+- Allow users to hide MP4/GIF buttons [\#454](https://github.com/pliablepixels/zmNinja/issues/454)
+- make MP4 playback speed configurable \(and persistent\) [\#453](https://github.com/pliablepixels/zmNinja/issues/453)
+
+**Merged pull requests:**
+
+- let's make GIF and MP4 an option in Dev Settings \#454 [\#456](https://github.com/pliablepixels/zmNinja/pull/456) ([maymaymay](https://github.com/maymaymay))
+
+## [v1.2.37](https://github.com/pliablepixels/zmNinja/tree/v1.2.37) (2017-02-11)
+[Full Changelog](https://github.com/pliablepixels/zmNinja/compare/v1.2.36...v1.2.37)
+
+**Implemented enhancements:**
+
+- Add ability to view server logs [\#452](https://github.com/pliablepixels/zmNinja/issues/452)
+- Add ability to reflow montage without resetting size [\#448](https://github.com/pliablepixels/zmNinja/issues/448)
+
+**Fixed bugs:**
+
+- wizard often does not detect cgi-bin [\#451](https://github.com/pliablepixels/zmNinja/issues/451)
+- fs command line option not working [\#450](https://github.com/pliablepixels/zmNinja/issues/450)
+
+**Closed issues:**
+
+- Montage Image Scale not Saving on Win x64 [\#447](https://github.com/pliablepixels/zmNinja/issues/447)
+- Side menu scroll feature locks after switching servers OR displaying liveview in landscape [\#337](https://github.com/pliablepixels/zmNinja/issues/337)
+
+**Merged pull requests:**
+
+- Translations [\#446](https://github.com/pliablepixels/zmNinja/pull/446) ([maymaymay](https://github.com/maymaymay))
+
+## [v1.2.36](https://github.com/pliablepixels/zmNinja/tree/v1.2.36) (2017-02-06)
+[Full Changelog](https://github.com/pliablepixels/zmNinja/compare/v1.2.35...v1.2.36)
+
+**Implemented enhancements:**
+
+- Add ability to hide grey buttons in single monitor view [\#443](https://github.com/pliablepixels/zmNinja/issues/443)
+- Desktop app opening maximized, in full screen montage view [\#436](https://github.com/pliablepixels/zmNinja/issues/436)
+- Adding Dutch Language Files [\#433](https://github.com/pliablepixels/zmNinja/issues/433)
+- Allow for archived events to be displayed or hidden \(based on toggle switch\) [\#432](https://github.com/pliablepixels/zmNinja/issues/432)
+- Enhancement: Add event names to Event list view [\#431](https://github.com/pliablepixels/zmNinja/issues/431)
+- server settings - confirm deletion [\#423](https://github.com/pliablepixels/zmNinja/issues/423)
+- Add ability to view zones as overlays on live monitor feed [\#420](https://github.com/pliablepixels/zmNinja/issues/420)
+- Add ability to cycle between montage profiles [\#419](https://github.com/pliablepixels/zmNinja/issues/419)
+- Adding Dutch language [\#387](https://github.com/pliablepixels/zmNinja/issues/387)
+- Hide credentials of simple auth in display [\#363](https://github.com/pliablepixels/zmNinja/issues/363)
+
+**Fixed bugs:**
+
+- switching from full screen to regular causes header alignment issues\(iOS only\) [\#429](https://github.com/pliablepixels/zmNinja/issues/429)
+- when bulk frames are present, frame view while viewing footage goes wrong [\#428](https://github.com/pliablepixels/zmNinja/issues/428)
+- display cgi-bin error if a wrong cgi path is set in login even if you don't tap save [\#427](https://github.com/pliablepixels/zmNinja/issues/427)
+- Fallback Server Hangup [\#424](https://github.com/pliablepixels/zmNinja/issues/424)
+- Cannot delete events [\#422](https://github.com/pliablepixels/zmNinja/issues/422)
+- restricted users for event notification not working [\#391](https://github.com/pliablepixels/zmNinja/issues/391)
+
+**Closed issues:**
+
+- Hard coded text found [\#440](https://github.com/pliablepixels/zmNinja/issues/440)
+- Hard coded text alert found [\#437](https://github.com/pliablepixels/zmNinja/issues/437)
+- Typo in Validating-if-APIs-work-on-ZM page \(events instead of events.json\): [\#421](https://github.com/pliablepixels/zmNinja/issues/421)
+- event server settings - Strange Behaviour [\#414](https://github.com/pliablepixels/zmNinja/issues/414)
+
+**Merged pull requests:**
+
+- 440 hard coded text found  [\#442](https://github.com/pliablepixels/zmNinja/pull/442) ([steelyard-nl](https://github.com/steelyard-nl))
+- sorted keys \#437 [\#439](https://github.com/pliablepixels/zmNinja/pull/439) ([maymaymay](https://github.com/maymaymay))
+- 437 hard coded text alert found [\#438](https://github.com/pliablepixels/zmNinja/pull/438) ([steelyard-nl](https://github.com/steelyard-nl))
+- 433 adding dutch language files [\#435](https://github.com/pliablepixels/zmNinja/pull/435) ([steelyard-nl](https://github.com/steelyard-nl))
+-  you can now toggle a dev option to hide/unhide archived \(flagged\) ev… [\#434](https://github.com/pliablepixels/zmNinja/pull/434) ([maymaymay](https://github.com/maymaymay))
+- Translation update to \#423 [\#425](https://github.com/pliablepixels/zmNinja/pull/425) ([maymaymay](https://github.com/maymaymay))
+
 ## [v1.2.35](https://github.com/pliablepixels/zmNinja/tree/v1.2.35) (2016-12-31)
 [Full Changelog](https://github.com/pliablepixels/zmNinja/compare/v1.2.34...v1.2.35)
 

@@ -175,12 +175,21 @@ angular.module('zmApp.controllers').controller('EventModalCtrl', ['$scope', '$ro
         $timeout(function()
         {
                 handle.pause();
-                handle.setPlayback(2);
+                handle.setPlayback(NVRDataModel.getLogin().videoPlaybackSpeed);
                 handle.play();
+                NVRDataModel.debug ("*** Invoking play");
 
         }, 300);
 
         // window.stop();
+    };
+
+    $scope.onPlaybackUpdate = function(rate)
+    {
+        console.log ("UPDATED RATE TO "+rate);
+        var ld = NVRDataModel.getLogin();
+        ld.videoPlaybackSpeed = rate;
+        NVRDataModel.setLogin(ld);
     };
 
     $scope.onCanPlay = function()
@@ -904,6 +913,7 @@ angular.module('zmApp.controllers').controller('EventModalCtrl', ['$scope', '$ro
 
             return;
 
+        $scope.isToggleListMenu = true;
         $scope.videoDynamicTime = "";
         $scope.videoIsReady = false;
         var ld = NVRDataModel.getLogin();
@@ -1173,6 +1183,12 @@ angular.module('zmApp.controllers').controller('EventModalCtrl', ['$scope', '$ro
             });
         }
 
+    };
+
+    $scope.toggleListMenu = function()
+    {
+
+        $scope.isToggleListMenu = !$scope.isToggleListMenu;
     };
 
     $scope.toggleGapless = function()
